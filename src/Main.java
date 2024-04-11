@@ -1,13 +1,9 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("task1");
-        Scanner n = new Scanner(System.in);
-        System.out.println("Выберите Вашу ОС: 1 - Android, 0 - iOs ");
-        int clientOS1 = n.nextInt();
-        switch (clientOS1) {
+        int clientOS = 0;
+        switch (clientOS) {
             case 0:
                 System.out.println("Установите версию приложения для iOS по ссылке");
                 break;
@@ -18,29 +14,25 @@ public class Main {
         System.out.println("_______________________________________________");
 
         System.out.println("task2");
-        Scanner m = new Scanner(System.in);
-        System.out.println("Выберите Вашу ОС: 1 - Android, 0 - iOs ");
-        int clientOS2 = m.nextInt();
-        System.out.println("Укажите год выпуска вашего устройства");
-        int clientDeviceYear = m.nextInt();
-        if (clientOS2 == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-            if (clientDeviceYear < 2015) {
+        int clientDeviceYear = 2015;
+        if (clientOS == 0) {
+            if (clientDeviceYear >= 2015) {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            } else if (clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             }
         }
-        if (clientOS2 == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-            if (clientDeviceYear < 2015) {
+        if (clientOS == 1) {
+            if (clientDeviceYear >= 2015) {
+                System.out.println("Установите версию приложения для Android по ссылке");
+            } else if (clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             }
         }
         System.out.println("_______________________________________________");
 
         System.out.println("task3");
-        System.out.println("Укажите год: ");
-        Scanner i = new Scanner(System.in);
-        int year = i.nextInt();
+        int year =1584;
         int x = year % 4;
         int y = year % 400;
         int z = year % 100;
@@ -57,9 +49,7 @@ public class Main {
         System.out.println("_______________________________________________");
 
         System.out.println("task4");
-        System.out.println("Укажите расстояние до клиента: ");
-        Scanner d = new Scanner(System.in);
-        int deliveryDistance = d.nextInt();
+        int deliveryDistance = 95;
         if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней: 1");
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
@@ -72,9 +62,7 @@ public class Main {
         System.out.println("_______________________________________________");
 
         System.out.println("task5");
-        System.out.println("Укажите номер месяца: ");
-        Scanner month = new Scanner(System.in);
-        int monthNumber = month.nextInt();
+        int monthNumber = 1;
         switch (monthNumber) {
             case 12:
             case 1:
@@ -98,6 +86,9 @@ public class Main {
                 break;
             default:
                 System.out.println("Номер месяца больше 12");
+        }
+        if (monthNumber < 1) {
+            System.out.println("Номер месяца меньше 1");
         }
     }
 }
