@@ -32,7 +32,7 @@ public class Main {
         System.out.println("_______________________________________________");
 
         System.out.println("task3");
-        int year =1584;
+        int year = 1584;
         int x = year % 4;
         int y = year % 400;
         int z = year % 100;
@@ -62,33 +62,34 @@ public class Main {
         System.out.println("_______________________________________________");
 
         System.out.println("task5");
-        int monthNumber = 1;
-        switch (monthNumber) {
-            case 12:
-            case 1:
-            case 2:
-                System.out.println("Месяц принадлежит сезону зима");
-                break;
-            case 3:
-            case 4:
-            case 5:
-                System.out.println("Месяц принадлежит сезону весна ");
-                break;
-            case 6:
-            case 7:
-            case 8:
-                System.out.println("Месяц принадлежит сезону лето ");
-                break;
-            case 9:
-            case 10:
-            case 11:
-                System.out.println("Месяц принадлежит сезону осень ");
-                break;
-            default:
-                System.out.println("Номер месяца больше 12");
-        }
-        if (monthNumber < 1) {
-            System.out.println("Номер месяца меньше 1");
+        int monthNumber = 13;
+        if (monthNumber >= 1 && monthNumber <= 12) {
+            switch (monthNumber) {
+                case 12:
+                case 1:
+                case 2:
+                    System.out.println("Месяц принадлежит сезону зима");
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    System.out.println("Месяц принадлежит сезону весна ");
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    System.out.println("Месяц принадлежит сезону лето ");
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    System.out.println("Месяц принадлежит сезону осень ");
+                    break;
+                default:
+                    System.out.println("Номер месяца больше 12");
+            }
+        } else {
+            System.out.println("Номер месяца не может быть " + monthNumber);
         }
     }
 }
